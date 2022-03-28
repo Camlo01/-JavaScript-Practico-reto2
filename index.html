@@ -12,8 +12,12 @@
 
 <body>
     <header>
-        <h1>Tienda</h1>
-        <p>Porcentajes y Descuentos</p>
+        <span class="header-title">
+            <h1>Tienda</h1>
+        </span>
+        <span class="header-parrafo">
+            <p>Porcentajes y Descuentos</p>
+        </span>
     </header>
 
     <main>
@@ -28,14 +32,16 @@
                         <input id="precio" type="text" placeholder="Precio">
                     </div>
                     <div class="label-con-input">
-                        <label for="descuento">Ingresa el precio del valor de su producto junto con el descuento a
-                            calcular</label>
-                        <input id="descuento" type="text" placeholder="Descuento">
-                    </div>
+                        <label for="descuento">Ingresa el porcentaje de descuento que desees calcular o el cupón a
+                            validar</label>
+                            <input id="descuento" type="text" placeholder="Descuento">
+                            <input id="cupon" type="text" placeholder="CUPON">
+                        </div>
                 </form>
             </div>
             <p id="resultadoEnPantalla" class="price-result">Aquí saldrá el precio final con el descuento aplicado!</p>
-            <button class="button-calculate" type="button" onclick="buttonCalcularDescuento()">calcular precio</button>
+            <button class="button-action" type="button" onclick="buttonCalcularDescuento()">Aplicar descuento</button>
+            <button class="button-action" type="button" onclick="buttonUsarCupon()">Descuento cupón</button>
         </section>
     </main>
 </body>
