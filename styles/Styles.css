@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 1600px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+:root {
+  --header-color-background: rgb(34, 34, 175);
+  --header-color-letter: white;
+}
+
+/* HEADER  */
+header {
+  background-color: var(--header-color-background);
+  color: var(--header-color-letter);
+  width: 100%;
+  font-size: 2.2rem;
+  display: flex;
+  flex-direction: start;
+  align-items: center;
+  padding: 10px 0 10px 10px;
+}
+header h1 {
+  font-weight: 800;
+  position: relative;
+  left: calc(8%);
+}
+
+header p {
+  position: relative;
+  left: calc(61% - 150px );
+}
+
+/* Main  */
+main {
+  background: radial-gradient(
+    circle,
+    rgba(67, 162, 207, 1) 83%,
+    rgba(29, 98, 131, 1) 100%
+  );
+  height: 600px;
+  padding-top: 30px;
+}
+
+main .section-calculate-discount {
+  background-color: rgb(224, 224, 224);
+  box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.74);
+  min-width: 320px;
+  max-width: 587px;
+  padding: 30px;
+  margin: 0 auto;
+  border-radius: 25px;
+  display: flex;
+  flex-wrap: wrap;
+
+  /*  
+código para centrar elementos
+  position: relative;
+  left: calc(50% - 150px);
+  background-color: red;
+  width: 300px;
+  height: 300px; */
+}
+
+.section-calculate-discount h2 {
+  color: rgb(0, 0, 0);
+  min-width: 240px;
+  max-width: 240px;
+  font-weight: 800;
+  /* padding: 0px; */
+  position: relative;
+  left: 3px;
+  font-size: 2.4rem;
+  display: flex;
+}
+
+.calculate-form label {
+  font-size: 1.6rem;
+  font-weight: 500;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 5px;
+}
+.calculate-form .label-con-input {
+  margin: 10px auto 15px auto;
+}
+.label-con-input label {
+  margin-bottom: 10px;
+}
+
+.section-calculate-discount input {
+  height: 28px;
+  font-size: 1.5rem;
+}
+
+.section-calculate-discount button {
+  width: 135px;
+  height: 33px;
+  font-size: 1.6rem;
+  position: relative;
+  left: 61%;
+}
