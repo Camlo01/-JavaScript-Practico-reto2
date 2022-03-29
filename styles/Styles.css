@@ -31,12 +31,14 @@ header .header-title {
   font-weight: 800;
   position: relative;
 }
-header .header-parrafo {
-  /* Configuracion Query media min-width480px;
+
+/* 
+Configuracion Query media min-width480px;
+   header .header-parrafo {
   justify-self: end;
   position: relative;
-  top: -38px; */
-}
+  top: -38px;
+} */
 /* Main  */
 main {
   background: radial-gradient(
@@ -55,7 +57,7 @@ main .section-calculate-discount {
   box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.74);
   min-width: 320px;
   max-width: 587px;
-  height: 445px;
+  min-height: 495px;
   padding: 30px;
   margin: 0 auto;
   border-radius: 25px;
@@ -100,8 +102,8 @@ código para centrar elementos
   height: 28px;
   font-size: 1.5rem;
   margin-right: 24px;
+  padding-left: 5px;
 }
-
 
 .section-calculate-discount .button-action {
   width: 160px;
@@ -113,5 +115,4 @@ código para centrar elementos
 
 .price-result {
   font-size: 2rem;
-  margin: 15px;
 }
