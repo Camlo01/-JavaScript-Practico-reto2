@@ -10,7 +10,7 @@ function calcularDescuento(precio, descuento) {
 
 // array de cupones
 // Descuentos  15%   20%  30%  40%  50%
-let cupones = ["UN0", "D0S", "TR3S", "CU4TRO", "cinco"];
+let cupones = ["S1MPLE", "TU2CUENTO", "DESCUENTOX3", "DESCOXDESCO", "5DESC"];
 
 function existeCupon(cupon) {
   if (cupones.includes(cupon)) {
@@ -26,11 +26,11 @@ function valorDeCupon(cupon) {
     case cupones[0]:
       return 15;
     case cupones[1]:
-      return 20;
+      return 25;
     case cupones[2]:
       return 30;
     case cupones[3]:
-      return 40;
+      return 44;
     case cupones[4]:
       return 50;
     default:
