@@ -4,18 +4,37 @@ console.group("Lógica de descuentos");
 function calcularDescuento(precio, descuento) {
   const porcentajeDescuento = 100 - descuento;
   const precioFinal = (precio * porcentajeDescuento) / 100;
-  return "El precio final del producto es de: $" + precioFinal;
+  return precioFinal;
   //   return "El producto con valor de " + precio + " Es de " + precioFinal;
 }
 
 // array de cupones
-let cupones = ["1", "cupon1", "cupon2", "cupon3"];
+// Descuentos  15%   20%  30%  40%  50%
+let cupones = ["UN0", "D0S", "TR3S", "CU4TRO", "cinco"];
 
-function verificarExistenciaCupon(cupon) {
+function existeCupon(cupon) {
   if (cupones.includes(cupon)) {
     return true;
   } else {
     return false;
+  }
+}
+// AQUÍ LOGICA DE DESCUENTO CORRESPONDIENTE
+// // Switch case
+function valorDeCupon(cupon) {
+  switch (cupon) {
+    case cupones[0]:
+      return 15;
+    case cupones[1]:
+      return 20;
+    case cupones[2]:
+      return 30;
+    case cupones[3]:
+      return 40;
+    case cupones[4]:
+      return 50;
+    default:
+      console.log("El cupon ingresado no existe");
   }
 }
 
@@ -31,24 +50,36 @@ function buttonCalcularDescuento() {
   const inputDescuento = document.getElementById("descuento");
   const precio = inputPrecio.value;
   const descuento = inputDescuento.value;
+
   const resultado = calcularDescuento(precio, descuento);
-  const parrafoPantalla = document.getElementById("resultadoEnPantalla");
-  parrafoPantalla.innerText = resultado;
+
+  //Se trae y se cambia el contenido de la etiqueta <p>
+  const valorEnPantalla = document.getElementById("resultadoEnPantalla");
+  valorEnPantalla.innerText =
+    "El precio final del producto es de: $" + resultado;
 }
 
 function buttonUsarCupon() {
-  console.log("Se ejecuta botón que calcula el precio con el cupon ingresado");
+  const inputPrecio = document.getElementById("precio");
   const inputCupon = document.getElementById("cupon");
-  const inputDescuento = document.getElementById("descuento");
-  const descuento = inputDescuento.value;
-
+  const precio = inputPrecio.value;
   const cupon = inputCupon.value;
 
-  if (verificarExistenciaCupon(cupon)) {
-    return buttonCalcularDescuento(descuento);
+  const valorCupon = valorDeCupon(cupon);
+
+  if (existeCupon(cupon)) {
+    const descuentoConCupon = calcularDescuento(precio, valorCupon);
+    //Se trae y se cambia el contenido de la etiqueta <p>
+    // return alert("Recibiste " +valorCupon+"% de descuento por tu cupon, el precio total es de " +descuentoConCupon +"$");
+    const valorEnPantalla = document.getElementById("resultadoEnPantalla");
+    valorEnPantalla.innerText =
+      "cupon de " +
+      valorCupon +
+      "%, el precio total es de " +
+      descuentoConCupon +
+      "$";
   } else {
-    // return "El cupon ingresado no es valido";
-    return alert("El cupon ingresado no es valido");
+    return alert("Cupon no existe");
   }
 }
 
